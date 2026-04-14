@@ -15,7 +15,7 @@ CoStrict Security is a self-developed AI-powered security scanning tool that pro
 
 ## Usage
 
-Perform interactive security scans via CLI during the development phase, providing real-time assistance to help developers identify and fix security issues.
+Perform interactive security reviews via CLI during the development phase, providing real-time assistance to help developers identify and fix security issues.
 
 - Supports a conversational interactive window for seamless communication and quick issue pinpointing
 - Can incorporate prior knowledge such as business context and threat models for more precise detection results
@@ -32,28 +32,28 @@ cs
 <!-- TODO: Add screenshot - 进入交互窗口 -->
 <!-- ![CLI Usage 1 - Enter interactive window](./img/CLI使用1-进入交互窗口.png) -->
 
-### Step 2: Select Scan Target
+### Step 2: Select Review Target
 
-After entering the security scan, the system will ask you what you want to scan. Three scan scopes are supported:
+After entering the security review, the system will ask you what you want to review. Three review scopes are supported:
 
 | Scope | Description |
 |------|------|
-| Specific file | Scan a single specified file, suitable for targeted security checks on individual files |
-| Specific directory | Scan all code files in a specified directory and its subdirectories, suitable for reviewing specific modules or components |
-| Specific branch | Scan code changes in a specified Git branch, suitable for reviewing branch code before merging |
+| Specific file | Review a single specified file, suitable for targeted security checks on individual files |
+| Specific directory | Review all code files in a specified directory and its subdirectories, suitable for reviewing specific modules or components |
+| Specific branch | Review code changes in a specified Git branch, suitable for reviewing branch code before merging |
 
 <!-- TODO: Add screenshot - 指定审查范围 -->
 <!-- ![Select scan target](./img/CLI使用2-指定审查范围.png) -->
 
-### Step 3: View Scan Report
+### Step 3: View Review Report
 
-After triggering the security scan, the CLI interactive window displays the scanning process in real time. If any dangerous operations are detected during the scan, manual confirmation is required before proceeding. Scan duration varies with code volume, ranging from a few minutes to several tens of minutes. Once complete, a security review report is generated locally in the project. The report includes three types of files:
+After triggering the security review, the CLI interactive window displays the review process in real time. If any dangerous operations are detected during the review, manual confirmation is required before proceeding. Review duration varies with code volume, ranging from a few minutes to several tens of minutes. Once complete, a security review report is generated locally in the project. The report includes three types of files:
 
 | Report File | Type | Description |
 |---|---|---|
-| `task_summary.md` | Summary report | A developer-readable summary containing scan overview and issue aggregation |
+| `task_summary.md` | Summary report | A developer-readable summary containing review overview and issue aggregation |
 | `[target-file]-report-[vuln-index].json` | Single-file vulnerability report | Detailed vulnerability information for a single file, suitable for integrating into custom review workflows |
-| `full_report.jsonl` | Merged report | A consolidated file of all scan results (JSONL format), suitable for CI/CD pipeline integration |
+| `full_report.jsonl` | Merged report | A consolidated file of all review results (JSONL format), suitable for CI/CD pipeline integration |
 
 <details>
 <summary>Security Audit Task Summary Example</summary>
@@ -63,7 +63,7 @@ After triggering the security scan, the CLI interactive window displays the scan
 | Item | Content |
 |------|------|
 | Audit Date | 2025-01-16 |
-| Scanned Directory | e:/Projects/DVWA |
+| Reviewed Directory | e:/Projects/DVWA |
 | Files Audited | 1 |
 | Vulnerabilities Found | 2 |
 | Output Directory | security-review_result/ |
