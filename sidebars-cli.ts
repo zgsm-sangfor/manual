@@ -21,6 +21,7 @@ const sidebarsCli: SidebarsConfig = {
       collapsed: true,
       items: [
         'guide/introduction',
+        'product-characteristics/cloud',
         'guide/installation',
         'guide/quick_start',
         'guide/feature',
@@ -78,7 +79,6 @@ const sidebarsCli: SidebarsConfig = {
         //   ],
         // },
         'product-characteristics/strict-spec',
-        'product-characteristics/cloud',
       ],
     },
     'best-practices',
