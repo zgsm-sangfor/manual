@@ -7,8 +7,6 @@ sidebar_position: 6
 
 [CoStrict Cloud](https://zgsm.sangfor.com/cloud/workspace) is an **AI-powered cloud programming workspace** that lets you remotely connect to your personal devices (local or private servers) from any browser. It features conversational AI programming, project file management, multi-session persistence, and remote terminal collaboration — enabling **seamless browser-based remote development, real-time AI coding and debugging, and cross-device project continuity**.
 
-![CoStrict Cloud Demo](../guide/img/quick_start/cs-cloud.gif)
-
 ## Quick Start
 
 ### 1. Sign In
