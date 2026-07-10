@@ -1,20 +1,29 @@
 ---
 sidebar_position: 3
 ---
+import hub_image1 from './img/hub-image1.webp';
+import hub_image2 from './img/hub-image2.webp';
+import hub_image3 from './img/hub-image3.webp';
+import hub_image4 from './img/hub-image4.webp';
+import hub_image5 from './img/hub-image5.webp';
+import hub_image6 from './img/hub-image6.webp';
+import hub_image7 from './img/hub-image7.webp';
+import hub_image8 from './img/hub-image8.webp';
+
 # 知识中心订阅教程：从网页订阅到 csc 自动同步
 
 ## 第一步：找到你想要的能力
 
 1. 知识中心首页是一排排的能力卡片，可以**搜索**（顶部搜索框）或**按分类浏览**。
 
-![知识中心首页](./img/hub-image1.webp)
+<img src={hub_image1} alt="知识中心首页" width="750" />
 
 2. 点开任意一张卡片，进入**详情页**。详情页能看到：
    - 这个能力是干什么的（描述）
    - **健康度 / 评估详情 / 综合评分**（帮你判断质量好不好）
    - 一个醒目的 **「订阅」** 按钮（带个小铃铛图标和订阅数）
 
-![能力详情页](./img/hub-image2.webp)
+<img src={hub_image2} alt="能力详情页" width="750" />
 
 ## 第二步：点击「订阅」
 
@@ -25,7 +34,7 @@ sidebar_position: 3
 - 点完按钮会变成 **「取消订阅」**，订阅数 +1，铃铛会抖一下 —— 这就成功了。
 - 不想要了？再点一次 **「取消订阅」** 就取消了。
 
-![订阅按钮](./img/hub-image3.webp)
+<img src={hub_image3} alt="订阅按钮" width="700" />
 
 就这么简单。**订阅本身不需要下载、不需要装环境**，它只是把这个能力记到你账号上。真正的下载交给 csc 自动完成（第四步）。
 
@@ -39,7 +48,7 @@ sidebar_position: 3
 
 > "该 MCP 服务需要你先填写一些值（如本地路径或 API token）才能使用。"
 
-![MCP参数配置](./img/hub-image4.webp)
+<img src={hub_image4} alt="MCP参数配置" width="750" />
 
 操作顺序：
 1. 在 **「参数配置」** 里把要求的值填好（如「路径」、「参数 1」等）
@@ -55,7 +64,7 @@ sidebar_position: 3
 - **第一次启动**会有个简单的引导：选个配色主题、看一眼安全提示、问你要不要启用终端优化 —— 按提示一路选下去就行（以后都能用 `/theme`、`/config` 改回来）。
 - 启动后你会进入一个**交互式对话界面**：最下面是输入框，平时在这里跟 AI 对话；凡是以 `/` 开头的就是「命令」（比如下面要用的 `/login`、`/hub`）。输入 `/` 时会自动弹出命令候选列表，不用背。
 
-![csc界面](./img/hub-image5.webp)
+<img src={hub_image5} alt="csc界面" width="650" />
 
 ### 2. 登录 /login
 
@@ -68,9 +77,9 @@ sidebar_position: 3
 - 它会弹出登录框并**自动打开浏览器**走统一身份（SSO）登录；如果浏览器没自动开，按提示把链接复制到浏览器打开。
 - 登录成功会提示 **Login successful**，按 `Esc` 关掉对话框即可。凭证会自动保存到本地（`~/.costrict/csc-auth.json`），以后不用反复登录。
 
-![登录对话框](./img/hub-image6.webp)
+<img src={hub_image6} alt="登录对话框" width="600" />
 
-![登录成功](./img/hub-image7.webp)
+<img src={hub_image7} alt="登录成功" width="550" />
 
 ## 第四步：让 csc 自动同步（你几乎什么都不用做）
 
@@ -89,7 +98,7 @@ sidebar_position: 3
 /hub
 ```
 
-![Hub面板](./img/hub-image8.webp)
+<img src={hub_image8} alt="Hub面板" width="600" />
 
 - **顶部**有一行提示：云端订阅项目，如需订阅请访问 [CoStrict Cloud](https://zgsm.sangfor.com/cloud)（这就是网页知识中心的入口）。
 - **4 个标签页**：Skills（技能）、Agents（子智能体）、Commands（命令）、MCP。

@@ -1,6 +1,15 @@
 ---
 sidebar_position: 1
 ---
+import image1 from './img/image1.webp';
+import image2 from './img/image2.webp';
+import image3 from './img/image3.webp';
+import image4 from './img/image4.webp';
+import image5 from './img/image5.webp';
+import image6 from './img/image6.webp';
+import image7 from './img/image7.webp';
+import image8 from './img/image8.webp';
+
 # CoStrict Cloud 使用手册
 
 CoStrict Cloud 是 AI 驱动的云端编程工作空间，适配 CoStrict CLI（csc）命令行工具，支持通过浏览器远程连接本地/私有服务器设备，内置对话式AI编程、文件管理、多会话留存、远程终端协作能力，实现无感远程开发、AI实时编码调试、跨设备项目无缝流转。
@@ -13,13 +22,13 @@ CoStrict Cloud 是 AI 驱动的云端编程工作空间，适配 CoStrict CLI（
 
 打开云端地址进入首页，右上角完成个人账号登录。
 
-![登录页面](./img/image1.webp)
+<img src={image1} alt="登录页面" width="750" />
 
 > **重要注意**：csc 命令行端与 CoStrict Cloud 网页端必须登录同一个账号，账号不一致会导致设备无法在网页端设备列表正常展示。
 
 登录好后会发现我们没有设备，所以需要执行注册，启动服务。
 
-![设备列表](./img/image2.webp)
+<img src={image2} alt="设备列表" width="750" />
 
 ## 2. 设备注册（命令行操作）
 
@@ -27,7 +36,7 @@ CoStrict Cloud 是 AI 驱动的云端编程工作空间，适配 CoStrict CLI（
 
 然后打开终端执行 csc 登录命令：
 
-![登录命令](./img/image3.webp) ![登录界面](./img/image4.webp)
+<img src={image3} alt="登录命令" width="500" /> <img src={image4} alt="登录界面" width="600" />
 
 执行后会弹出登录界面，注意和第一步登录云端账号需一致。
 
@@ -39,11 +48,11 @@ CoStrict Cloud 是 AI 驱动的云端编程工作空间，适配 CoStrict CLI（
 
 如果想多设备注册，可选择 3，返回刚才注册设备指引页，重复在新设备上操作相同命令即可。
 
-![创建工作空间](./img/image5.webp)
+<img src={image5} alt="创建工作空间" width="750" />
 
 选择 1、2，会打开创建弹窗，选中设备内本地项目目录，完成工作空间创建。
 
-![选择项目目录](./img/image6.webp)
+<img src={image6} alt="选择项目目录" width="500" />
 
 每个工作空间唯一绑定一个独立项目目录，支持多项目创建隔离工作空间。
 
@@ -64,7 +73,7 @@ CoStrict Cloud 是 AI 驱动的云端编程工作空间，适配 CoStrict CLI（
 2. 浏览筛选所需技能、子智能体、自定义命令
 3. 点击技能卡片收藏按钮，完成云端收藏
 
-![技能商店](./img/image7.webp)
+<img src={image7} alt="技能商店" width="750" />
 
 更多操作教程参考下方文档：[知识中心订阅教程：从网页订阅到 csc 自动同步](/cloud/hub-subscription)
 
@@ -106,4 +115,4 @@ CoStrict Cloud 是 AI 驱动的云端编程工作空间，适配 CoStrict CLI（
 
 扫码添加 CoStrict 运营小助手-蔻蔻，统一解答。
 
-![运营小助手](./img/image8.webp)
+<img src={image8} alt="运营小助手" width="200" />

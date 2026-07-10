@@ -1,9 +1,7 @@
 ---
 sidebar_position: 2
 ---
-# CSC Installation Guide (Beginner)
-
-From opening the terminal to your first successful conversation — a step-by-step guide for beginners.
+# CSC Installation Guide 
 
 **For:** First-time CSC users on Windows, macOS, and Linux · **Updated:** 2026-07-03
 

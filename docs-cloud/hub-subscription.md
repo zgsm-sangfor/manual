@@ -1,20 +1,29 @@
 ---
 sidebar_position: 3
 ---
+import hub_image1 from './img/hub-image1.webp';
+import hub_image2 from './img/hub-image2.webp';
+import hub_image3 from './img/hub-image3.webp';
+import hub_image4 from './img/hub-image4.webp';
+import hub_image5 from './img/hub-image5.webp';
+import hub_image6 from './img/hub-image6.webp';
+import hub_image7 from './img/hub-image7.webp';
+import hub_image8 from './img/hub-image8.webp';
+
 # Knowledge Hub Subscription Guide: From Web to csc Auto-Sync
 
 ## Step 1: Find the Capability You Want
 
 1. The Knowledge Hub homepage shows rows of capability cards. You can **search** (top search bar) or **browse by category**.
 
-![Knowledge Hub homepage](./img/hub-image1.webp)
+<img src={hub_image1} alt="Knowledge Hub homepage" width="750" />
 
 2. Click any card to open the **detail page**, where you'll see:
    - What the capability does (description)
    - **Health / Assessment Details / Overall Score** (quality indicators)
    - A prominent **Subscribe** button (with a bell icon and subscriber count)
 
-![Capability detail page](./img/hub-image2.webp)
+<img src={hub_image2} alt="Capability detail page" width="750" />
 
 ## Step 2: Click "Subscribe"
 
@@ -25,7 +34,7 @@ Click the **Subscribe** button on the detail page or card.
 - The button changes to **Unsubscribe**, subscriber count +1, and the bell shakes — that's success.
 - Want to unsubscribe? Click **Unsubscribe** again.
 
-![Subscribe button](./img/hub-image3.webp)
+<img src={hub_image3} alt="Subscribe button" width="700" />
 
 That's it. **Subscribing doesn't require downloads or environment setup** — it simply records the capability on your account. The actual download is handled by csc automatically (Step 4).
 
@@ -39,7 +48,7 @@ Some MCPs need you to fill in values first (e.g., local path, API token). The de
 
 > "This MCP service requires you to fill in some values (such as local path or API token) before use."
 
-![MCP parameter configuration](./img/hub-image4.webp)
+<img src={hub_image4} alt="MCP parameter configuration" width="750" />
 
 Steps:
 1. Fill in the required values under **Parameter Configuration** (e.g., "Path", "Parameter 1")
@@ -55,7 +64,7 @@ Type `csc` in your terminal and press Enter:
 - **First launch** includes a brief onboarding: choose a color theme, review the security notice, decide whether to enable terminal optimization — follow the prompts (you can change these later with `/theme` and `/config`).
 - Once launched, you'll enter an **interactive conversation interface**: the input box at the bottom is for chatting with AI. Commands start with `/` (e.g., `/login`, `/hub`). Typing `/` auto-suggests available commands.
 
-![csc interface](./img/hub-image5.webp)
+<img src={hub_image5} alt="csc interface" width="650" />
 
 ### 2. Sign In: `/login`
 
@@ -68,9 +77,9 @@ Type in the input box and press Enter:
 - A login dialog opens and **automatically launches your browser** for SSO sign-in. If the browser doesn't open, copy the URL from the prompt into your browser.
 - On success, you'll see **Login successful**. Press `Esc` to dismiss. Credentials are saved locally at `~/.costrict/csc-auth.json` — no need to re-login later.
 
-![Login dialog](./img/hub-image6.webp)
+<img src={hub_image6} alt="Login dialog" width="600" />
 
-![Login success](./img/hub-image7.webp)
+<img src={hub_image7} alt="Login success" width="550" />
 
 ## Step 4: Let csc Auto-Sync (Almost Nothing to Do)
 
@@ -89,7 +98,7 @@ In the csc input box, type:
 /hub
 ```
 
-![Hub panel](./img/hub-image8.webp)
+<img src={hub_image8} alt="Hub panel" width="600" />
 
 - **Top banner:** Links to cloud subscription items — visit [CoStrict Cloud](https://zgsm.sangfor.com/cloud) for the Knowledge Hub.
 - **4 tabs:** Skills, Agents, Commands, MCP.
