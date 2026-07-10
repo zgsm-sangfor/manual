@@ -34,8 +34,8 @@ Users who have logged in before can log in again through the following two metho
 
 ![img.png](./login/other.webp)
 
----
+***
 
-:::tip Private Deployment
+:::tip[Private Deployment]
 For private deployment login, you need to fill in the Base Url.
 :::

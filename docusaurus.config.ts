@@ -34,6 +34,24 @@ const config: Config = {
       },
     ],
     [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'cloud',
+        path: 'docs-cloud',
+        routeBasePath: 'cloud',
+        sidebarPath: './sidebars-cloud.ts',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'v3',
+        path: 'docs-v3',
+        routeBasePath: 'v3',
+        sidebarPath: './sidebars-v3.ts',
+      },
+    ],
+    [
       '@docusaurus/plugin-client-redirects',
       {
         redirects: [

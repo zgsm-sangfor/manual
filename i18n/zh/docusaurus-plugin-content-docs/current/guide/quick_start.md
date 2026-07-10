@@ -36,8 +36,8 @@ sidebar_position: 2
 
 ![img.png](install/other.webp)
 
----
+***
 
-:::tip 私有化部署
+:::tip[私有化部署]
 私有化部署登录时需要填写 Base Url。
 :::
