@@ -94,6 +94,15 @@ Skip the interactive login and edit ~/.costrict/settings.json directly:
 }
 ```
 
+:::tip[Private Deployment]
+
+Private deployment requires the following configuration:
+
+- For CLI usage, set the `COSTRICT_BASE_URL` environment variable before starting
+- After authentication, credentials are stored at `~/.costrict/share/auth.json`, which takes priority for server configuration
+
+:::
+
 ## Step 4: Model selection
 
 ``` 
