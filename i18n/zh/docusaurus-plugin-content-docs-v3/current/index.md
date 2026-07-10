@@ -1,17 +1,34 @@
 ---
 sidebar_position: 1
 ---
+import image1 from './img/image1.webp';
+import image2 from './img/image2.webp';
+import image3 from './img/image3.webp';
+import image4 from './img/image4.webp';
+import image5 from './img/image5.webp';
+import image6 from './img/image6.webp';
+import image7 from './img/image7.webp';
+import image8 from './img/image8.webp';
+import image9 from './img/image9.webp';
+import image10 from './img/image10.webp';
+import image11 from './img/image11.webp';
+import image12 from './img/image12.webp';
+import image13 from './img/image13.webp';
+import image14 from './img/image14.webp';
+import image15 from './img/image15.webp';
+import image16 from './img/image16.webp';
+
 # CoStrict 3.x（Cloud 模式 & Classic 模式）使用指南
 
 ## Classic 模式与 Cloud 模式
 
 **Classic 模式（默认）：**
 
-![Classic模式](./img/image1.webp)
+<img src={image1} alt="Classic模式" width="420" />
 
 **Cloud 模式：**
 
-![Cloud模式](./img/image2.webp)
+<img src={image2} alt="Cloud模式" width="400" />
 
 ## 如何切换双模式
 
@@ -19,33 +36,33 @@ sidebar_position: 1
 
 使用快捷键 `Ctrl + Shift + P`，搜索 "ui mode"：
 
-![搜索ui mode](./img/image3.webp)
+<img src={image3} alt="搜索ui mode" width="600" />
 
-![切换界面](./img/image4.webp)
+<img src={image4} alt="切换界面" width="600" />
 
 ### UI 开关切换（JetBrains、VS Code 通用）
 
 **Classic 模式 → Cloud 模式：**
 
-![切换到Cloud模式](./img/image5.webp)
+<img src={image5} alt="切换到Cloud模式" width="400" />
 
 插件 Cloud 模式依赖 csc、cs-cloud，首次使用请按提示操作后再点击【确认切换】。
 
-![依赖提示](./img/image6.webp)
+<img src={image6} alt="依赖提示" width="400" />
 
-![切换确认](./img/image7.webp)
+<img src={image7} alt="切换确认" width="600" />
 
 **Cloud 模式 → Classic 模式：**
 
-![切换到Classic模式](./img/image8.webp)
+<img src={image8} alt="切换到Classic模式" width="390" />
 
-![确认切换](./img/image9.webp)
+<img src={image9} alt="确认切换" width="250" />
 
 ## 插件 Cloud 模式基本操作指南
 
 ### 主界面
 
-![主界面](./img/image10.webp)
+<img src={image10} alt="主界面" width="400" />
 
 1. 展开历史对话列表
 2. 当前对话标题（下拉可以看到近期对话，快速切换会话）
@@ -57,16 +74,16 @@ sidebar_position: 1
 8. 开启自动允许授权
 9. 上下文窗口信息
 
-![发送与工作区](./img/image11.webp)
+<img src={image11} alt="发送与工作区" width="250" />
 
 10. 发送信息 / 取消对话
 11. 工作区切换 / 分支切换（插件 Cloud 模式支持多工作区）
 
-![工作区切换](./img/image12.webp)
+<img src={image12} alt="工作区切换" width="320" />
 
 ### 设置页
 
-![设置页](./img/image13.webp)
+<img src={image13} alt="设置页" width="400" />
 
 1. 用户名（用户名右侧图标可跳转个人中心）
 2. 用户联系方式
@@ -83,7 +100,7 @@ sidebar_position: 1
 2. `/compact` — 压缩会话上下文
 3. `/hub` — 开启 & 关闭远端 Skills、Agents、Commands、MCPs
 
-![hub命令](./img/image14.webp)
+<img src={image14} alt="hub命令" width="550" />
 
 ## 插件 Cloud 模式常见问题
 
@@ -105,13 +122,13 @@ sidebar_position: 1
 
 一般插件会自动重连或重新启动 cs-cloud 服务。如果多次重试失败，可以先运行 `cs-cloud doctor` 命令查看是否有报错，然后将报错信息发送给 CoStrict 技术人员。
 
-![错误示例](./img/image15.webp)
+<img src={image15} alt="错误示例" width="340" />
 
 ### 5. 图片无法正确发送
 
 目前附件上传 cs-cloud 还在兼容中，暂时无法正确传递多模态信息。变通的方式是发送文件的路径给支持多模态的模型。
 
-![发送文件路径](./img/image16.webp)
+<img src={image16} alt="发送文件路径" width="380" />
 
 ### 6. Auto 模型对话启动慢
 
