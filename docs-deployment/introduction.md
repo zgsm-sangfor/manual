@@ -4,6 +4,8 @@ sidebar_position: 2
 
 # Backend Deployment
 
+The new version provides cloud and other features, using a brand new deployment solution. Please check [CoStrict New Version Deployment](./new-version-deployment.md) for details.
+
 ## Project Overview
 
 CoStrict Backend Deployment Tool is an enterprise-level AI code assistant backend service deployment solution based on Docker Compose. This project provides a complete microservice architecture, including core components such as AI gateway, identity authentication, code analysis, and chat services, supporting both private deployment and cloud service modes.

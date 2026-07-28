@@ -38,6 +38,17 @@ Click the **Subscribe** button on the detail page or card.
 
 That's it. **Subscribing doesn't require downloads or environment setup** — it simply records the capability on your account. The actual download is handled by csc automatically (Step 4).
 
+### Fork and Customize an Existing Skill
+
+If an existing Skill is close to what you need but requires customization, you can fork it and use the forked copy as your own content:
+
+1. Open the Skill detail page and click **Fork**.
+2. After the fork is complete, open the copied Skill from your own content.
+3. Edit the Skill content as needed and save your changes.
+4. Subscribe to the edited copy. csc will sync it in the same way as other subscribed Skills.
+
+The original Skill is not changed. The forked copy belongs to you, so you can continue editing and subscribing to your customized version.
+
 ### Type-Specific Differences
 
 Not all capabilities support one-click subscription.
