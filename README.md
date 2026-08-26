@@ -1,276 +1,160 @@
-# 使用说明
+# CoStrict 文档站点
 
+本项目是基于 [Docusaurus](https://docusaurus.io/) 构建的 CoStrict 文档站点，提供 Plugin、CLI、CSC、私有化部署、Cloud 和 V3 相关文档，并支持中文和英文。
 
-### 前期准备工作
+站点是静态文档应用，不提供后端 REST API。本文档中的“接口”指文档站点的访问入口和路由。
 
-> 后续添加文档，需要用到 `git `等操作，要准备 `github` 账号 和 `git` 工具
+## 站点访问接口
 
-[安装参考](https://blog.csdn.net/mukes/article/details/115693833)
+### 文档入口
 
+| 文档模块 | 源文件目录 | 路由前缀 | 默认入口 |
+| --- | --- | --- | --- |
+| Plugin | `docs/` | `/plugin` | `/plugin/guide/installation` |
+| CLI | `docs-cli/` | `/cli` | `/cli/guide/introduction` |
+| CSC | `docs-csc/` | `/csc` | `/csc/overview` |
+| 私有化部署 | `docs-deployment/` | `/plugin/deployment` | `/plugin/deployment/foreword` |
+| Cloud | `docs-cloud/` | `/cloud` | `/cloud` |
+| V3 | `docs-v3/` | `/v3` | `/v3` |
 
-> 要查看添加 `md` 文件后的展示效果还需要准备 `node.js` （本地测试完才可以提交代码）
+中文是默认语言，访问默认路由时不需要添加语言前缀。生产构建后的英文页面在路由前添加 `/en`，例如：
 
-
-
-
-[下载链接](https://nodejs.org/en/download)
-
-
-## 文档仓库
-
-### 克隆仓库
-
-[文档仓库地址](https://github.com/zgsm-ai/manual)
-
-1. 首先 `fork` 主仓库, 会在个人账户下创建一个与原始项目一模一样的仓库副本, 在副本仓库操作，可以避免错误操作等带来的影响
-
-
-
-![img.png](img/fork.png)
-
-
-
-
-<br />
-
-2. 在 `git bash` 中执行克隆命令
-
-```commandline
-git clone [URL]  # 例如 git clone https://github.com/zgsm-ai/manual.git
+```text
+中文：/plugin/guide/installation
+英文：/en/plugin/guide/installation
 ```
 
+Cloud 和 V3 文档当前可以通过路由直接访问，但暂未作为顶部导航栏入口展示。
 
-<details>
-  <summary> 3. 查看 `fork` 仓库的 `URL`， 选择  `HTTPS / SSH` 复制</summary>
+### 兼容入口
 
-![img.png](img/githubclone.png)
+项目保留了部分旧路径的跳转规则：
 
-</details>
+- `/` 跳转到 `/plugin/guide/installation`；
+- `/FAQ` 跳转到 `/plugin/FAQ`；
+- Plugin 文档的旧路径（例如 `/guide/...`、`/billing/...`、`/product-features/...`）跳转到对应的 `/plugin/...` 路径。
 
-大部分情况下， 直接 `clone` 会因为网络问题 `clone` 失败， 即便挂了科学上网， 设置系统代理可能也不行
+## 环境要求
 
-> 两种解决方法
+- Node.js `>= 18`
+- pnpm `>= 9`（项目使用 `pnpm-lock.yaml`）
+- Docker（仅在使用容器启动时需要）
 
-1. 使用代理软件的 `tun` 模式， 这种就相当于生成了一个虚拟网卡， 即透明代理
-2. 因为 `cmd` 这种没遵循系统代理设置， 我们可以通过环境变量强制指定其使用我们的代理
+检查本地环境：
 
-> `cmd` 和 `bash` 设置环境变量有区别, 参考：
-
-```
-git bash:
-export https_proxy=http://localhost:7890  # 7890 是clash的端口， verge应该是7897
-export http_proxy=http://localhost:7890   # 这个加不加都行
-
-cmd:
-set https_proxy=http://localhost:7890  # 7890 是clash的端口， verge应该是7897
-set http_proxy=http://localhost:7890   # 这个加不加都行
+```bash
+node --version
+pnpm --version
 ```
 
-> clone的总流程如下所示
+如果尚未安装 pnpm，可以执行：
 
-![img.png](img/github-proxy.png)
-
-4. 接下来 `cd` 到 克隆的项目下， 后续提交代码等操作即可在这里进行
-```commandline
-// highlight-next-line
-cd manual
-# SXF-Admin@DESKTOP-4UHN77U MINGW64 /d/Users/SXF-Admin/Desktop/演示操作/manual (main)
-# cd 后应该可以看到当前位于 main 分支
-
-// highlight-next-line
-git checkout -b feature/your-branch  # 尽量不要在 main 或者 master 分支开发, 这里从 main 创建一个新的开发分支
-# SXF-Admin@DESKTOP-4UHN77U MINGW64 /d/Users/SXF-Admin/Desktop/演示操作/manual (feature/add-md)
-# 已经在你的个人分支上了
+```bash
+npm install --global pnpm@9
 ```
 
-### 仓库结构
+## 本地启动
 
-> 通过 `git` 克隆后, 可以看到项目结构，这里只列举了需要关注的部分
+在项目根目录安装依赖：
 
-```js
-manual-copy
-├─docs
-│  ├─guide
-│  │  └─img
-│  └─img
-├─i18n
-│  └─zh
-│      ├─docusaurus-plugin-content-docs
-│      │  └─current
-│      │      ├─guide
-│      │      │  └─img
-│      │      └─img
+```bash
+pnpm install
 ```
 
-`docs` 下的 `md` 文件对应于英文文档, 在 `i18n/zh/docusaurus-plugin-content-docs/current` 下的 `md` 文件 对应于中文文档
+### 中文开发模式
 
-不同文档结构在使用时会有点差别，先划分下两种结构
-
-> 多个文档位于同一个标签（目录）下 -> 分组式结构， 如下
-```commandline
-docs/
-├── getting-started/
-│   ├── installation.md
-│   └── quota.md
+```bash
+pnpm start
 ```
 
-> 每个文档对应一个标签 -> 扁平式结构， 如下
-```commandline
-docs/
-├── getting-started.md
-├── installation.md
-├── quota.md
-└── usage-guide.md
+启动中文开发服务器，默认访问地址为 [http://localhost:3000](http://localhost:3000)。修改文档后页面会自动刷新。
+
+### 英文开发模式
+
+```bash
+pnpm run start:en
 ```
 
+启动英文开发服务器，默认访问地址同样为 [http://localhost:3000](http://localhost:3000)。中文和英文开发服务器不能同时使用同一个端口。
 
-## 本地调试
-在项目目录下执行命令， 安装开发所需的包
+开发模式一次只服务一个语言，并且不会生成完整搜索索引。需要验证语言切换和搜索功能时，请使用生产模式。
 
-```commandline
-npm install
+## 生产构建和预览
+
+先生成生产构建产物，再启动本地静态服务器：
+
+```bash
+pnpm run build
+pnpm run serve
 ```
 
-### 开发模式
-开发模式执行
-```commandline
-npm run start
-```
-本地修改会实时同步到前端页面上， 适合调试， 但是存在个问题， 没法测试中英文文档切换和搜索等功能， 因此需要用到生产模式
+构建产物位于 `build/` 目录。生产预览可以验证多语言路由、搜索和静态资源是否正常。
 
+## Docker 启动
 
-### 生产模式
-依次执行
-```commandline
-npm run build
-npm run serve
-```
-这种缺点是没法实时看到修改的内容
+项目使用多阶段 Dockerfile 构建静态站点，并通过 Nginx 提供服务。构建并启动容器：
 
-## 编写文档
-文档和所在目录的命名不能存在*空格*，可以用`‘-’`
-
-### 添加扁平式结构文档
-
-- 把准备好的英文版本的 `md` 文件直接放在 `docs` 目录下, 图片等资源可以放在同级的img文件夹中
-- 同样在 `current` 也准备一份， 内容翻译为中文，最终结构如下：
-
-```js
-manual-copy
-├─docs
-│  └─img
-│  └─your.md
-│  └─ ...
-├─i18n
-│  └─zh
-│      ├─docusaurus-plugin-content-docs
-│      │  └─current
-│      │      └─img
-│      │      └─your.md
-│      │      └─ ..
+```bash
+docker build -t costrict-manual .
+docker run --rm -p 8080:80 costrict-manual
 ```
 
-编写md文件需要加入下面的内容
-```commandline
----
-sidebar_position: 3          # 该参数规定了当前文档在大纲中的位置， 需要放在md文件的开头
----
+启动后访问 [http://localhost:8080](http://localhost:8080)。容器内部监听 80 端口，Nginx 同时处理文档路由和旧路径跳转。
 
-第一个 #（即一级标题）会作为大纲标题
+## 常用命令
+
+| 命令 | 用途 |
+| --- | --- |
+| `pnpm start` | 启动中文开发服务器 |
+| `pnpm run start:en` | 启动英文开发服务器 |
+| `pnpm run build` | 构建生产版本到 `build/` |
+| `pnpm run serve` | 预览生产构建结果 |
+| `pnpm run typecheck` | 执行 TypeScript 类型检查 |
+| `pnpm run clear` | 清理 Docusaurus 缓存和构建产物 |
+| `pnpm run write-translations` | 生成或更新翻译文件 |
+| `pnpm run write-heading-ids` | 生成文档标题锚点 |
+| `pnpm run convert-images` | 将 PNG/SVG 转换为 WebP 并更新引用 |
+
+提交修改前建议执行：
+
+```bash
+pnpm run typecheck
+pnpm run build
 ```
 
-<details>
-  <summary> 实际效果对照 </summary>
+## 项目结构
 
-![img.png](img/add-md-single.png)
-
-</details>
-
-
-
-
-### 添加分组式结构文档
-
-首先把md文件按照下列方式组织起来
-```js
-manual-copy
-├─docs
-│  ├─guide
-│  │  └─img
-│  │  └─_category_.json
-│  │  └─mdfile1.md
-│  │  └─mdfile2.md
-│  │  └─ ...
-├─i18n
-│  └─zh
-│      ├─docusaurus-plugin-content-docs
-│      │  └─current
-│      │      ├─guide
-│      │      │  └─img
-│      │      │  └─_category_.json
-│      │      │  └─mdfile1.md
-│      │      │  └─mdfile2.md
-│      │      │  └─ ...
+```text
+.
+├── docs/                  # Plugin 英文文档
+├── docs-cli/              # CLI 英文文档
+├── docs-csc/              # CSC 英文文档
+├── docs-deployment/       # 私有化部署英文文档
+├── docs-cloud/            # Cloud 英文文档
+├── docs-v3/               # V3 英文文档
+├── i18n/zh/               # 中文翻译及主题文本
+├── src/                   # React 组件和全局样式
+├── static/                # 全局静态资源
+├── docusaurus.config.ts   # 站点、插件、路由和多语言配置
+├── sidebars*.ts           # 各文档模块的侧边栏配置
+├── Dockerfile             # Docker 构建配置
+└── nginx.conf             # Nginx 路由和静态资源配置
 ```
 
+新增或修改文档时，请同步维护对应的 `i18n/zh/` 中文文档，并在对应的 `sidebars*.ts` 中注册新的文档入口。
 
-相比扁平式结构文档，需要增加 `_category_.json` 文件
+## 开发分支和提交
 
+请基于最新的 `main` 创建开发分支，不要直接在 `main` 分支上修改：
 
-```js
-# _category_.json
-{
-  "label": "Getting Started",   # 大纲标题 （不过在这里不起作用，需要继续向下看）
-  "position": 1,                # 当前目录大纲位置
-  "link": {
-    "title": "Getting Started", # 大纲导航页标题 （不过在这里不起作用，需要继续向下看）
-    "type": "generated-index"   # 自动生成大纲标题
-  }
-}
+```bash
+git switch main
+git pull --rebase origin main
+git switch -c docs/your-branch
 ```
 
-涉及到中英文翻译，需要额外做一点操作， 这个是 `docusaurus` 本身存在的一点问题[可以看这里的讨论](https://github.com/facebook/docusaurus/issues/8996)
+提交信息使用语义化前缀，例如：
 
-> 执行
-
-```js
-npm run docusaurus -- write-translations
+```bash
+git commit -m "docs: update readme"
 ```
-
-查看 `i18n/zh/docusaurus-plugin-content-docs/current.json`, 将其中的英文翻译为中文
-
-
-## 提交代码
-
-
-通过生产模式测试才可以提交pr
-
-
-```commandline
-git add .   # 准备处理全部改动
-
-git commit -m "docs: add contributing guide"  # 提交到工作区
-
-# 如果主线有改动是本地没有的
-# git pull --rebase origin main  # 不要直接 pull 会多一次合并提交
-
-git push -u origin feature/add-md:feature/add-md)  # 这样会在github个人仓库新建一个feature/add-md分支并提交
-```
-[其他 git 使用介绍参考](https://github.com/zgsm-ai/costrict/blob/main/assets/docs/devel/zh-CN/fork.md)
-
-完成上述操作后， 准备提交pr
-
-
-> 首先检查下提交的内容和本地提交的是不是一致的， 点击后查看每个文件的改动
-
-![img.png](img/commit.png)
-
-确认无误后， 点击：
-
-![img.png](img/pr.png)
-
-确认下目标分支和提交分支是不是正确的， 没问题后， 点击create pull request, 遵守提交准则，即完成
-![img.png](img/check.png)
-
-<br/>
-合并到主线后会自动触发服务更新，可以在主仓库的 `Actions` 下查看
