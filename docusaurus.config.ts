@@ -132,11 +132,11 @@ const config: Config = {
         },
         {
           type: 'doc',
-          docId: 'guide/introduction',
-          docsPluginId: 'cli',
+          docId: 'overview',
+          docsPluginId: 'csc',
           position: 'left',
-          label: 'CLI',
-          activeBaseRegex: '/cli/(?!product-characteristics/cloud)',
+          label: 'CSC',
+          activeBaseRegex: '/csc/',
         },
         // Cloud entry temporarily hidden from navbar — page still accessible via URL
         // {
