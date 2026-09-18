@@ -4,6 +4,7 @@ const sidebarsCsc: SidebarsConfig = {
   cscSidebar: [
     'overview',
     'quickstart',
+    'api-integration',
     {
       type: 'category',
       label: 'Getting Started (Detailed)',
