@@ -23,6 +23,7 @@ const sidebars: SidebarsConfig = {
         'guide/installation',
         'guide/quick_start',
         'guide/feature',
+        'guide/api-integration',
       ],
     },
     {
