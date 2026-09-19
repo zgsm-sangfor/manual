@@ -14,9 +14,9 @@ CoStrict currently offers the following Credits packages:
 
 | Plan Name | Price | Credits Amount | Validity Period |
 |-----------|-------|----------------|-----------------|
-| Package 1 | ¥50 | 1000 Credits | 30 days |
-| Package 2 | ¥200 | 4,200 Credits | 30 days |
-| Package 3 | ¥500 | 10,800 Credits | 30 days |
+| Package 1 | ¥50 | 1000 Credits | one year |
+| Package 2 | ¥200 | 4,200 Credits | one year |
+| Package 3 | ¥500 | 10,800 Credits | one year |
 
 ### 1.2 Credits Consumption Rules
 
@@ -54,7 +54,7 @@ Users purchase CoStrict Credits packages through the CoStrict official website p
 
 ### 3.1 Validity Period
 
-- All purchased Credits are valid for **30 calendar days**
+- All purchased Credits are valid for **one year**
 - The validity period starts from the date when Credits are successfully recharged and credited
 - Credits that expire unused will automatically become invalid and will not be refunded
 
