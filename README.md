@@ -32,7 +32,7 @@ Cloud 和 V3 文档当前可以通过路由直接访问，但暂未作为顶部�
 
 - `/` 跳转到 `/plugin/guide/installation`；
 - `/FAQ` 跳转到 `/plugin/FAQ`；
-- Plugin 文档的旧路径（例如 `/guide/...`、`/billing/...`、`/product-features/...`）跳转到对应的 `/plugin/...` 路径。
+- Plugin 文档的旧路径（例如 `/guide/...`、`/product-features/...`）跳转到对应的 `/plugin/...` 路径。
 
 ## 环境要求
 

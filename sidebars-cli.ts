@@ -82,7 +82,6 @@ const sidebarsCli: SidebarsConfig = {
     },
     'best-practices',
     'FAQ',
-    'redirect',
   ],
 };
 

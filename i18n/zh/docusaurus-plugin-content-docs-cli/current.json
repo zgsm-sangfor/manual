@@ -19,14 +19,6 @@
     "message": "产品特性",
     "description": "The generated-index page title for category Product Features in sidebar cliSidebar"
   },
-  "sidebar.cliSidebar.category.计费说明": {
-    "message": "计费说明",
-    "description": "The label for category Billing in sidebar cliSidebar"
-  },
-  "sidebar.cliSidebar.category.计费说明.link.generated-index.title": {
-    "message": "计费说明",
-    "description": "The generated-index page title for category Billing in sidebar cliSidebar"
-  },
   "sidebar.cliSidebar.category.协议": {
     "message": "协议",
     "description": "The label for category Policy in sidebar cliSidebar"
@@ -50,14 +42,6 @@
   "sidebar.cliSidebar.category.Product Features.link.generated-index.title": {
     "message": "产品功能",
     "description": "The generated-index page title for category Product Features in sidebar cliSidebar"
-  },
-  "sidebar.cliSidebar.category.Billing": {
-    "message": "计费说明",
-    "description": "The label for category Billing in sidebar cliSidebar"
-  },
-  "sidebar.cliSidebar.category.Billing.link.generated-index.title": {
-    "message": "计费说明",
-    "description": "The generated-index page title for category Billing in sidebar cliSidebar"
   },
   "sidebar.cliSidebar.category.Policy": {
     "message": "其他",
