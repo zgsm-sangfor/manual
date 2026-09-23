@@ -85,17 +85,6 @@ const sidebars: SidebarsConfig = {
     'tutorial-videos/video',
     {
       type: 'category',
-      label: 'Billing',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        'billing/usage',
-        'billing/purchase',
-        'billing/service',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Version notes',
       collapsible: true,
       collapsed: true,
